@@ -1,0 +1,22 @@
+.carousel img {
+    height:700px;
+    width: 100%;
+    object-fit:scale-down;
+    object-position: center;
+    
+}
+.carousel-control-prev-icon {
+    background-image: url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='%23000' viewBox='0 0 8 8'%3E%3Cpath d='M5.25 0l-4 4 4 4 1.5-1.5-2.5-2.5 2.5-2.5-1.5-1.5z'/%3E%3C/svg%3E") !important;
+    
+   }
+   
+.carousel-control-next-icon {
+     background-image: url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='%23000' viewBox='0 0 8 8'%3E%3Cpath d='M2.75 0l-1.5 1.5 2.5 2.5-2.5 2.5 1.5 1.5 4-4-4-4z'/%3E%3C/svg%3E") !important;
+}
+.carousel-caption{
+   font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+   /* -webkit-box-shadow: inset 0 0 20rem rgba(0, 0, 0, 1); */
+    /* box-shadow: inset 0 0 20rem rgba(0, 0, 0, 1); */
+    background: linear-gradient(to left,rgba(255, 255, 255, 0),rgba(255, 255, 255, 0),rgba(255, 255, 255, 0), rgba(57, 57, 57, 0), rgba(1, 1, 1, 0.636) 50%, rgba(0, 0, 0, 0.651) 50%, rgba(255, 255, 255, 0),rgba(255, 255, 255, 0),rgba(255, 255, 255, 0),rgba(255, 255, 255, 0) 100%);
+   
+}

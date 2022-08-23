@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href={{ url_for('static', filename='css/style.css') }}>
+        {% block stylesheets %}{% endblock stylesheets %}
+        <!--<script src="../src/index.js" type="text/jsx"></script>-->
+        <script src={{ url_for('static', filename='index.js') }} type="text/javascript"></script>
+        {% block javascripts %}{% endblock javascripts %}
+        
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.10.4/gsap.min.js"></script>
+        <!--
+        <div class="cursor">
+            <div class="cursor__ball cursor__ball--big ">
+              <svg height="30" width="30">
+                <circle cx="15" cy="15" r="12" stroke-width="0"></circle>
+              </svg>
+            </div>
+            
+            <div class="cursor__ball cursor__ball--small">
+              <svg height="10" width="10">
+                <circle cx="5" cy="5" r="4" stroke-width="0"></circle>
+              </svg>
+            </div>
+          </div>
+        -->
+        <title>Platinum Lodging</title>
+    </head>
+    <body onload="load()" style="">
+        {% include 'navbar.html' %}
+        {% block content %}
+        {% endblock %}
+</body>
+</html>

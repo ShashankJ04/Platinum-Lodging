@@ -1,0 +1,455 @@
+
+
+@import url('https://fonts.googleapis.com/css?family=Raleway:400,500,600,700,800,900');
+
+:root {
+  --Brown-1: #CC9544;
+  --Brown-2: #603601;
+  --Brown-3: #361500;
+  --Brown-4: #1C0A00;
+  --Gold: rgb(171,132,79);
+  --Light: rgb(248,245,240); }
+
+html {
+  font-size: 62.5%;
+  box-sizing: border-box;
+}
+*, *:before, *:after {
+  box-sizing: inherit;
+}
+
+article, header, section, aside, details, figcaption, figure, footer, header, hgroup, main, nav, section, summary {
+    display: block;
+}
+hr.style1{
+	border-top: 1px solid #b2ada6;
+}
+#more {display: none;
+}
+#myBtn{
+  border: none;
+  color: var(--Brown-2);
+  font-size: 150%;
+  background-color: rgba(255, 255, 255, 0);
+}
+
+
+/* feedback section  */
+:root {
+  --white: white;
+  --gradient: linear-gradient(-45deg, #ffa600 0%, #ff5e03 50%);
+  --form: #eeefef;
+  --border-radius: 4px;
+  --form-width: 500px;
+  --form-mob-width: 320px;
+}
+
+
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+button,
+label {
+  cursor: pointer;
+}
+
+label {
+  display: block;
+}
+
+button,
+input,
+textarea {
+  font-family: inherit;
+  font-size: 100%;
+  border: none;
+}
+
+textarea {
+  resize: none;
+}
+
+body {
+  font: 20px/1.5 sans-serif;
+  background: var(--white);
+}
+
+
+
+/* FORM
+–––––––––––––––––––––––––––––––––––––––––––––––––– */
+[type="checkbox"] {
+  position: absolute;
+  left: -9999px;
+}
+
+.feedback-label,
+.form {
+  position: fixed;
+  top: 50%;
+  right: 0;
+  backface-visibility: hidden;
+}
+
+.feedback-label {
+  transform-origin: top right;
+  transform: rotate(-90deg) translate(50%, -100%);
+  /*uncomment this if you want to reverse the order of the characters*/
+  /*transform: rotate(90deg) translateX(50%);*/
+  z-index: 2;
+}
+
+.form {
+  width: var(--form-width);
+  max-height: 90vh;
+  transform: translate(100%, -50%);
+  padding: 30px;
+  overflow: auto;
+  background: var(--form);
+  z-index: 1;
+}
+
+.feedback-label,
+.form,
+.form button {
+  transition: all 0.35s ease-in-out;
+}
+
+.feedback-label,
+.form input,
+.form textarea,
+.form button {
+  border-radius: var(--border-radius);
+}
+
+.feedback-label,
+.form button {
+  background: var(--gradient);
+  color: var(--white);
+}
+
+.feedback-label:hover,
+.form button:hover {
+  filter: hue-rotate(-45deg);
+}
+
+.feedback-label {
+  padding: 5px 10px;
+  border-radius: var(--border-radius) var(--border-radius) 0 0;
+}
+
+form div:not(:last-child) {
+  margin-bottom: 20px;
+}
+
+form div:last-child {
+  text-align: right;
+}
+
+.form input,
+.form textarea {
+  padding: 0 5px;
+  width: 100%;
+}
+
+.form button {
+  padding: 10px 20px;
+  width: 50%;
+  max-width: 120px;
+}
+
+.form input {
+  height: 40px;
+}
+
+.form textarea {
+  height: 220px;
+}
+
+[type="checkbox"]:checked + .feedback-label {
+  /*EDGE is buggy with calc + variables + transform - use a hardcoded value instead of variables*/
+  transform: rotate(-90deg) translate(50%, calc((var(--form-width) + 100%) * -1)); 
+  /*uncomment this if you want to reverse the order of the characters*/
+  /*transform: rotate(90deg) translate(50%, var(--form-width));*/
+}
+
+[type="checkbox"]:focus + .feedback-label {
+  outline: 2px solid rgb(77, 144, 254);
+}
+
+[type="checkbox"]:checked ~ .form {
+  transform: translate(0, -50%);
+}
+
+/* MQ
+–––––––––––––––––––––––––––––––––––––––––––––––––– */
+@media screen and (max-width: 600px) {
+  body {
+    font-size: 16px;
+  }
+
+  .form {
+    padding: 15px;
+    width: var(--form-mob-width);
+  }
+
+  form div:not(:last-child) {
+    margin-bottom: 10px;
+  }
+
+  [type="checkbox"]:checked + .feedback-label {
+    transform: rotate(-90deg) translate(50%, calc((var(--form-mob-width) + 100%) * -1));
+    /*uncomment this if you want to reverse the order of the characters*/
+    /*transform: rotate(90deg) translate(50%, var(--form-mob-width));*/
+  }
+}
+
+
+/* End of feedback section  */
+
+
+body {
+    background: #ffffff none repeat scroll 0 0;
+    color: #222;
+    font-size: 100%;
+    line-height: 24px;
+    margin: 0;
+	padding:0;
+	font-family: "Raleway",sans-serif;
+}
+a{
+	font-family: "Raleway",sans-serif;
+	text-decoration: none;
+	outline: none;
+}
+a:hover, a:focus {
+	color: #373e18;
+}
+section {
+    float: left;
+    width: 100%;
+	padding-bottom:3em;
+}
+h2 {
+    color: #1a0e0e;
+    font-size: 26px;
+    font-weight: 700;
+    margin: 0;
+    line-height: normal;
+	text-transform:uppercase;
+}
+h2 span {
+    display: block;
+    padding: 0;
+    font-size: 18px;
+    opacity: 0.7;
+    margin-top: 5px;
+	text-transform:uppercase;
+}
+
+#float-right{
+	float:right;	
+}
+
+/* ******************************************************
+	Script Top
+*********************************************************/
+
+.ScriptTop {
+    background: #fff none repeat scroll 0 0;
+    float: left;
+    font-size: 0.69em;
+    font-weight: 600;
+    line-height: 2.2;
+    padding: 12px 0;
+    text-transform: uppercase;
+    width: 100%;
+}
+
+/* To Navigation Style 1*/
+.ScriptTop ul {
+    margin: 24px 0;
+    padding: 0;
+    text-align: left;
+}
+.ScriptTop li{
+	list-style:none;	
+	display:inline-block;
+}
+.ScriptTop li a {
+    background: var(--Brown-1) none repeat scroll 0 0;
+    color: #fff;
+    display: inline-block;
+    font-size: 14px;
+    font-weight: 600;
+    padding: 5px 18px;
+    text-decoration: none;
+    text-transform: capitalize;
+}
+.ScriptTop li a:hover{
+	background:#000;
+	color:#fff;
+}
+
+
+/* ******************************************************
+	Script Header
+*********************************************************/
+
+.ScriptHeader {
+    float: left;
+    width: 100%;
+    padding: 2em 0;
+}
+.rt-heading {
+    margin: 0 auto;
+	/* text-align:center; */
+}
+.Scriptcontent{
+	line-height:28px;	
+}
+.ScriptHeader h1{
+	font-family: "brandon-grotesque", "Brandon Grotesque", "Source Sans Pro", "Segoe UI", Frutiger, "Frutiger Linotype", "Dejavu Sans", "Helvetica Neue", Arial, sans-serif;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+    color: var(--Brown-2);
+    font-size: 26px;
+    font-weight: 700;
+    margin: 0;
+    line-height: normal;
+
+}
+.ScriptHeader h2 {
+    color: var(--Brown-2);
+    font-size: 20px;
+    font-weight: 400;
+    margin: 5px 0 0;
+    line-height: normal;
+
+}
+.ScriptHeader h1 span {
+    display: block;
+    padding: 0;
+    font-size: 22px;
+    opacity: 0.7;
+    margin-top: 5px;
+
+}
+.ScriptHeader span {
+    display: block;
+    padding: 0;
+    font-size: 22px;
+    opacity: 0.7;
+    margin-top: 5px;
+}
+
+
+
+
+/* ******************************************************
+	Live Demo
+*********************************************************/
+
+
+
+
+
+/* ******************************************************
+	Responsive Grids
+*********************************************************/
+
+.rt-container {
+	margin: 0 auto;
+	padding-left:12px;
+	padding-right:12px;
+}
+.rt-row:before, .rt-row:after {
+  display: table;
+  line-height: 0;
+  content: "";
+}
+
+.rt-row:after {
+  clear: both;
+}
+[class^="col-rt-"] {
+  box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  -o-box-sizing: border-box;
+  -ms-box-sizing: border-box;
+  padding: 0 15px;
+  min-height: 1px;
+  position: relative;
+}
+
+
+@media (min-width: 768px) {
+  .rt-container {
+    width: 750px;
+  }
+  [class^="col-rt-"] {
+    float: left;
+    width: 49.9999999999%;
+  }
+  .col-rt-6, .col-rt-12 {
+    width: 100%;
+  }
+  
+}
+
+@media (min-width: 1200px) {
+	.rt-container {
+		width: 1170px;
+	}
+	.col-rt-1 {
+		width:16.6%;
+	}
+	.col-rt-2 {
+		width:30.33%;
+	}
+	.col-rt-3 {
+		width:50%;
+	}
+	.col-rt-4 {
+		width: 67.664%;
+	}
+	.col-rt-5 {
+		width: 83.33%;
+	}
+	
+
+}
+
+@media only screen and (min-width:240px) and (max-width: 768px){
+	 .ScriptTop h1, .ScriptTop ul {
+		text-align: center;
+	}
+	.ScriptTop h1{
+		margin-top:0;
+		margin-bottom:15px;
+	}
+	.ScriptTop ul{
+		 margin-top:12px;		
+	}
+	
+	.ScriptHeader h1,
+	.ScriptHeader h2, 
+	.scriptnav ul{
+		text-align:center;	
+	}
+	.scriptnav ul{
+		 margin-top:12px;		
+	}
+	#float-right{
+		float:none;	
+	}
+	
+}
+
+
+
+

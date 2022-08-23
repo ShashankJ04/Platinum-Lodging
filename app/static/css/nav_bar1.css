@@ -1,0 +1,167 @@
+:root {
+    --Brown-1: #CC9544;
+    --Brown-2: #603601;
+    --Brown-3: #361500;
+    --Brown-4: #1C0A00;
+    --Gold: rgb(171,132,79);
+    --Light: rgb(248,245,240); }
+  
+    * {
+      margin: 0;
+      padding: 0; }
+    
+    *, *::after, *::before {
+      box-sizing: inherit; }
+    
+      html { 
+        box-sizing: border-box;}
+  
+  root {
+    font-weight: 400;
+    line-height: 1.6;
+    min-height: 100vh;
+    overflow-x: hidden; }
+  
+    body::-webkit-scrollbar {
+      display: none; }
+    
+    a, a:hover, a:visited, a:active {
+      color: inherit;
+      text-decoration: none; }
+  /*
+  @font-face {
+    font-family: Gilda;
+    src: url(../Fonts/GildaDisplay-Regular.ttf); }
+  
+  @font-face {
+    font-family: Argentum;
+    src: url(../Fonts/ArgentumSans-Regular.ttf); }
+  
+  @font-face {
+    font-family: Monarda;
+    src: url(../Fonts/Monarda.ttf); }
+  
+  @font-face {
+    font-family: Argentum2;
+    src: url(../Fonts/ArgentumSans-Thin.ttf); }
+  
+  @font-face {
+    font-family: Rampage1;
+    src: url(../Fonts/RampageMonoline.otf); }
+  
+  @font-face {
+    font-family: Rampage2;
+    src: url(../Fonts/RampageMonoline-Rounded.otf); }
+  
+  @font-face {
+    font-family: CG7;
+    src: url(../Fonts/CabinetGrotesk/CabinetGrotesk-Black.otf); }
+  
+  @font-face {
+    font-family: CG6;
+    src: url(../Fonts/CabinetGrotesk/CabinetGrotesk-Bold.otf); }
+  
+  @font-face {
+    font-family: CG5;
+    src: url(../Fonts/CabinetGrotesk/CabinetGrotesk-Extrabold.otf); }
+  
+  @font-face {
+    font-family: CG4;
+    src: url(../Fonts/CabinetGrotesk/CabinetGrotesk-Extralight.otf); }
+  
+  @font-face {
+    font-family: CG3;
+    src: url(../Fonts/CabinetGrotesk/CabinetGrotesk-Light.otf); }
+  
+  @font-face {
+    font-family: CG2;
+    src: url(../Fonts/CabinetGrotesk/CabinetGrotesk-Medium.otf); }
+  
+  @font-face {
+    font-family: CG1;
+    src: url(../Fonts/CabinetGrotesk/CabinetGrotesk-Regular.otf); }
+  
+  @font-face {
+    font-family: CG0;
+    src: url(../Fonts/CabinetGrotesk/CabinetGrotesk-Thin.otf); }
+  */
+  .user-nav {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    font-size: 1.5rem;
+    font-family: Argentum;
+    font-weight: 400;
+    position: relative;
+    color: var(--Brown-3);
+    margin-top: 2.5rem; }
+    .user-nav__company {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer; }
+    .user-nav__title {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      font-weight: 600;
+      align-items: center;
+      font-family: Gilda;
+      font-size: 2rem; }
+    .user-nav__sub-title {
+      font-family: Argentum2;
+      font-size: 1rem; }
+    .user-nav__logo {
+      height: 3rem;
+      width: 7rem;
+      cursor: pointer;
+      background-image: url(./../img/logo-gold.png);
+      background-repeat: no-repeat;
+      background-size: cover;
+      transition: .2s; }
+    .user-nav__nav {
+      display: flex;
+      width: 40vw;
+      justify-content: space-evenly;
+      transform: translateX(-5rem); }
+      .user-nav__nav > * {
+        cursor: pointer; }
+    .user-nav__contact {
+      display: flex;
+      align-items: center;
+      font-weight: 500;
+      font-size: 1.5rem;
+      color: white;
+      background-color: var(--Gold);
+      padding: 1rem 3rem;
+      border-radius: 100vw;
+      cursor: pointer; }
+  
+  #user-nav.mode1 {
+    color: var(--Brown-3); }
+  
+  #user-nav__logo.mode1 {
+    background-image: url(./../img/logo-gold.png); }
+  
+  .Gold {
+    color: var(--Gold); }
+  
+  .header {
+    position: fixed;
+    height: 8rem;
+    width: 100vw;
+    background-color: transparent;
+    box-shadow: none;
+    transition: 0.8s;
+    z-index: 2;
+    background-color: white;
+    box-shadow: 0 1rem 1rem rgba(0, 0, 0, 0.1); }
+  
+  #header.mode0 {
+    z-index: -1;
+    opacity: 0; }
+  
+  #header.mode1 {
+    background-color: white;
+    box-shadow: 0 1rem 1rem rgba(0, 0, 0, 0.1); }
+  

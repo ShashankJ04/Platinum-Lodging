@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"> 
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+    <title>Details Page</title>
+    <meta name="author" content="Codeconvey" />
+
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/1.3.4/jspdf.min.js"></script>
+    <!-- Slider CSS -->
+    <link rel="stylesheet" href={{url_for('static', filename='css/style3.css')}}> 
+    
+    <!--Only for demo purpose - no need to add.-->
+    <link rel="stylesheet" href={{url_for('static', filename='css/demo.css')}}> 
+    <link rel="stylesheet" href={{ url_for('static', filename='css/nav_bar1.css')}}> 
+
+    
+    
+    <script src={{url_for('static', filename='script.js')}} type="text/javascript"></script>
+
+
+    <style>  
+        table {  
+          font-family: arial, sans-serif;  
+          border-collapse: collapse;  
+          width: 50%;
+          margin: 0px auto;
+        }
+        #editor{
+          margin-top: 5%;
+        }
+        #htmlContent{
+          text-align: center;
+        }  
+        td, th, button {  
+          border: 1px solid #dddddd;  
+          text-align: left;  
+          padding: 8px;  
+        } 
+        
+        button {  
+          border: 1px solid black;   
+        } 
+        tr:nth-child(even) {  
+          background-color: #dddddd;  
+        }  
+      </style>
+	
+</head>
+<body>
+		
+<!-- <div class="ScriptTop">
+    <div class="rt-container">
+        <div class="col-rt-4" id="float-right">
+          Ad Here
+        </div>
+        
+    </div>
+</div> -->
+
+
+<div id="htmlContent">
+    <h2 id="heading1" style="color: #361500">Title</h2>  
+    <h3 id="heading2">SubTitle</h3>  
+    <p id="para1"></p>  
+    <p id="para2"></p>  
+       
+  </div>
+  <!-- <center>
+    <p>
+      <button id="generatePDF">generate PDF</button>
+    </p>
+  </center> -->
+
+
+
+  
+<!-- actual Content -->
+<div id="root">
+  <div class="header" id="header">
+     <nav class="user-nav" id="user-nav">
+        <div class="user-nav__company">
+           <div class="user-nav__logo" id="user-nav__logo" href={{ url_for('home') }}></div>
+           <span class="user-nav__title"><span class="Gold" href={{ url_for('home') }}>P L A T I N U M </span><span class="user-nav__sub-title">L O D G I N G</span></span>
+        </div>
+        <div class="user-nav__nav">
+          <a class="user-nav__nav__home" href={{ url_for('home') }}>Home</a>
+          <a class="user-nav__nav__our-homes" href={{ url_for('properties') }}>Our Homes</a>
+          <a class="user-nav__nav__partner-up">Partner Up</a>
+          <a class="user-nav__nav__about-us">About Us</a>
+      </div>
+        <a class="user-nav__contact" class="a_in_nav">Contact</a>
+     </nav>
+  </div>
+</div>
+<br>
+<br>
+<br>
+<header class="ScriptHeader">
+    <div class="rt-container">
+    	<div class="col-rt-12">
+        	<div class="rt-heading">
+                           
+            	<h1 id="heading">Villa David Chipperfield Nord</h1>
+            
+                <p id="subheading" style="margin-top: 1%; align-items: center; align-content: center;">
+                    <svg style="background-color: rgba(0, 0, 0, 0); color: #361500; padding-top: 0.1%;" xmlns="http://www.w3.org/2000/svg" width="15" height="15" fill="currentColor" class="bi bi-tag" viewBox="0 0 16 16">
+                        <path d="M6 4.5a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0zm-1 0a.5.5 0 1 0-1 0 .5.5 0 0 0 1 0z"/>
+                        <path d="M2 1h4.586a1 1 0 0 1 .707.293l7 7a1 1 0 0 1 0 1.414l-4.586 4.586a1 1 0 0 1-1.414 0l-7-7A1 1 0 0 1 1 6.586V2a1 1 0 0 1 1-1zm0 5.586 7 7L13.586 9l-7-7H2v4.586z"/>
+                      </svg> &nbsp;
+                      Gardone Riviera, Lombardia, Italy 
+                      <button id="download_btn" class="btn btn-outline-dark "><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-download" viewBox="0 0 16 16">
+                        <path d="M.5 9.9a.5.5 0 0 1 .5.5v2.5a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1v-2.5a.5.5 0 0 1 1 0v2.5a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2v-2.5a.5.5 0 0 1 .5-.5z" />
+                        <path d="M7.646 11.854a.5.5 0 0 0 .708 0l3-3a.5.5 0 0 0-.708-.708L8.5 10.293V1.5a.5.5 0 0 0-1 0v8.793L5.354 8.146a.5.5 0 1 0-.708.708l3 3z" />
+                    </svg> &nbsp; Download (.pdf)</button>
+
+                    </p>
+                    <hr class="style1">
+                 
+            </div>
+        </div>
+    </div>
+</header>
+<section>
+    <div class="rt-container">
+        
+          <div class="col-rt-12">
+            <button onclick="window.location.href='{{ url_for('gridview') }}'" id="see_more_btn" class="btn btn-outline-dark " ><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-images" viewBox="0 0 16 16">
+                <path d="M4.502 9a1.5 1.5 0 1 0 0-3 1.5 1.5 0 0 0 0 3z"/>
+                <path d="M14.002 13a2 2 0 0 1-2 2h-10a2 2 0 0 1-2-2V5A2 2 0 0 1 2 3a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2v8a2 2 0 0 1-1.998 2zM14 2H4a1 1 0 0 0-1 1h9.002a2 2 0 0 1 2 2v7A1 1 0 0 0 15 11V3a1 1 0 0 0-1-1zM2.002 4a1 1 0 0 0-1 1v8l2.646-2.354a.5.5 0 0 1 .63-.062l2.66 1.773 3.71-3.71a.5.5 0 0 1 .577-.094l1.777 1.947V5a1 1 0 0 0-1-1h-10z"/>
+              </svg>&nbsp; See More&nbsp; </button>
+            <br>
+              <div class="Scriptcontent">
+              
+              <div class="slider">
+                
+	<input type="radio" name="slide_switch" id="id1" checked="checked"/>
+	<label for="id1">
+		<img src="https://source.unsplash.com/rChFUMwAe7E/640x320" width="100"/>
+	</label>
+	<img src="https://source.unsplash.com/rChFUMwAe7E/640x320">
+	
+	<!--Lets show the second image by default on page load-->
+	<input type="radio" name="slide_switch" id="id2" />
+	<label for="id2">
+		<img src="https://source.unsplash.com/MP0bgaS_d1c/640x320" width="100"/>
+	</label>
+	<img src="https://source.unsplash.com/MP0bgaS_d1c/640x320"/>
+	
+	<input type="radio" name="slide_switch" id="id3"/>
+	<label for="id3">
+		<img src="https://source.unsplash.com/2gDwlIim3Uw/640x320" width="100"/>
+	</label>
+	<img src="https://source.unsplash.com/2gDwlIim3Uw/640x320"/>
+	
+	<input type="radio" name="slide_switch" id="id4"/>
+	<label for="id4">
+		<img src="https://source.unsplash.com/ujGLsMmXoBg/640x320" width="100"/>
+	</label>
+	<img src="https://source.unsplash.com/ujGLsMmXoBg/640x320"/>
+	
+	<input type="radio" name="slide_switch" id="id5"/>
+	<label for="id5">
+		<img src="https://source.unsplash.com/KpMj15W7otY/640x320" width="100"/>
+	</label>
+	<img src="https://source.unsplash.com/KpMj15W7otY/640x320"/>
+</div>
+<br>
+<br>
+<br>
+<hr class="mt-2 mb-3 style1"/>
+
+<div className="container" style="margin-top: 2%; margin-left: 10%;">
+    <div className="card mt-4">
+        <div id="card1" className="card-body">
+            <h2>Luxury stay in Gardone Riviera, Lombardia, Italy</h2>
+            <p>&nbsp; 8 guests . 4 bedrooms . 4 beds . 4.5 bathrooms</p>
+            <hr class="mt-2 mb-3" />
+            <h6>
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-house-door-fill" viewBox="0 0 16 16">
+                    <path d="M6.5 14.5v-3.505c0-.245.25-.495.5-.495h2c.25 0 .5.25.5.5v3.5a.5.5 0 0 0 .5.5h4a.5.5 0 0 0 .5-.5v-7a.5.5 0 0 0-.146-.354L13 5.793V2.5a.5.5 0 0 0-.5-.5h-1a.5.5 0 0 0-.5.5v1.293L8.354 1.146a.5.5 0 0 0-.708 0l-6 6A.5.5 0 0 0 1.5 7.5v7a.5.5 0 0 0 .5.5h4a.5.5 0 0 0 .5-.5z" />
+                </svg>
+                &nbsp; Designed by
+
+            </h6>
+            <p>
+                &nbsp;   David Chipperfield
+            </p>
+            <h6>
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-file-earmark-bar-graph-fill" viewBox="0 0 16 16">
+                    <path d="M9.293 0H4a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h8a2 2 0 0 0 2-2V4.707A1 1 0 0 0 13.707 4L10 .293A1 1 0 0 0 9.293 0zM9.5 3.5v-2l3 3h-2a1 1 0 0 1-1-1zm.5 10v-6a.5.5 0 0 1 .5-.5h1a.5.5 0 0 1 .5.5v6a.5.5 0 0 1-.5.5h-1a.5.5 0 0 1-.5-.5zm-2.5.5a.5.5 0 0 1-.5-.5v-4a.5.5 0 0 1 .5-.5h1a.5.5 0 0 1 .5.5v4a.5.5 0 0 1-.5.5h-1zm-3 0a.5.5 0 0 1-.5-.5v-2a.5.5 0 0 1 .5-.5h1a.5.5 0 0 1 .5.5v2a.5.5 0 0 1-.5.5h-1z" />
+                </svg>
+                &nbsp; Featured in
+            </h6>
+            <p>
+                &nbsp;   Dezeen, August 2015
+                <br />
+                &nbsp;   Designboom, July 2015
+
+            </p>
+
+
+        </div>
+    </div>
+</div>
+
+
+<div className="container" style="margin-top: 2%; margin-left: 10%;">
+    <div className="card mt-2">
+        <p>Architect David Chipperfield designed the airy interiors of this classic pergola-style house to celebrate the breathtaking surroundings of Lake Garda.<span id="dots">...</span><span id="more"> From this prestigious position on the Eden Luxury Resort, you’ll enjoy endless views of the lake, as well as easy access to walking and biking trails. After a day on the lake, cool off in the pool or grab a drink at Eden's gourmet restaurant.Architect David Chipperfield designed the airy interiors of this classic pergola-style house to celebrate the breathtaking surroundings of Lake Garda. From this prestigious position on the Eden Luxury Resort, you’ll enjoy endless views of the lake, as well as easy access to walking and biking trails. After a day on the lake, cool off in the pool or grab a drink at Eden’s gourmet restaurant. Copyright © Luxury Retreats. All rights reserved.</span></p>
+
+<button onclick="myFunction()" id="myBtn">Read more</button>
+        <div id="card2" className="card-body">
+            <DemoClass />
+            <hr class="mt-2 mb-3" />
+            <h6>BEDROOM & BATHROOM</h6>
+            <ul>
+                <li>
+                    Bedroom 1 - Master: King size bed, Ensuite bathroom with stand-alone rain shower, Television, Kitchenette
+                </li>
+                <li>
+                    Bedroom 2: Queen size bed, Ensuite bathroom with stand-alone rain shower, Television
+                </li>
+                <li>
+                    Bedroom 3: Queen size bed, Ensuite bathroom with stand-alone rain shower, Television
+                </li>
+                <li>
+                    Bedroom 4: Queen size bed, Jack & Jill bathroom with Exercise room, Stand-alone rain Desk, Balcony
+
+                </li>
+
+            </ul>
+            <hr class="mt-2 mb-3" />
+            <h6>FEATURES & AMENITIES</h6>
+            <ul>
+                <li>
+                    Fully equipped kitchen with breakfast bar
+                </li>
+                <li>
+                    Formal dining area with seating for 10
+                </li>
+                <li>
+                    Ice maker
+                </li>
+                <li>
+                    Dishwasher
+                </li>
+
+            </ul>
+        </div>
+    </div>
+</div>
+</div>
+           
+    		</div>
+		</div>
+    </div>
+</section>
+
+<!-- Feedback Section  -->
+<input type="checkbox" id="mycheckbox">
+<label for="mycheckbox" class="feedback-label">FEEDBACK</label>
+<form class="form" action="">
+  <div>
+    <label for="fullname">Full Name</label>
+    <input type="text" id="fullname">
+  </div>
+  <div>
+    <label for="email">Email</label>
+    <input type="email" id="email">
+  </div>
+  <div>
+    <label for="comment">Comment</label>
+    <textarea id="comment"></textarea>
+  </div>
+  <div>
+    <button id="send_btn" type="submit">Send</button>
+  </div>
+</form>
+
+
+
+<!-- Footer section  -->
+
+
+
+<section>
+    <hr class="mt-2 mb-3 style1" />
+    <footer style="align-items:center; align-content: center; margin: auto; display: block;">
+       <p style="margin-left: 50%;">&copy; Copyright Platinum lodging 2022</p> 
+    </footer>
+</section>
+
+
+
+     
+
+
+
+	</body>
+</html>
