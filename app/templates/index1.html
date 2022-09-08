@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href={{url_for('static', filename='css/style.css')}}>
+        <!--<script src="../src/index.js" type="text/jsx"></script>-->
+        <script src={{url_for('static', filename='index.js')}} type="text/javascript"></script>
+        <!--
+        <div class="cursor">
+            <div class="cursor__ball cursor__ball--big ">
+              <svg height="30" width="30">
+                <circle cx="15" cy="15" r="12" stroke-width="0"></circle>
+              </svg>
+            </div>
+            
+            <div class="cursor__ball cursor__ball--small">
+              <svg height="10" width="10">
+                <circle cx="5" cy="5" r="4" stroke-width="0"></circle>
+              </svg>
+            </div>
+          </div>
+        -->
+        <title>Platinum Lodging</title>
+    </head>
+    <body onload="load()" style="">
+        {% include 'nav_bar.html' %}
+        <div id="root">
+            <div class="container">
+                <div class="screen1" id="screen1">
+                    <div class="screen1__content" id="roll1" style="opacity: 0.7945;">
+                        <div class="screen1__subtag">COMFORT AT YOUR FINGERTIPS</div>
+                        <div class="screen1__tag">EXPERIENCE THE DIFFERENCE</div>
+                    </div>
+                    <div class="screen1__content show" id="roll2" style="opacity: 0.7945;">
+                        <div class="screen1__subtag">UPGRADE YOUR HOME</div>
+                        <div class="screen1__tag">BRING THE BEST OUT OF YOUR HOUSE</div>
+                    </div>
+                    <div class="screen1__content" id="roll3" style="opacity: 0.7945;">
+                        <div class="screen1__subtag">YOUR HOME HAS POTENTIAL</div>
+                        <div class="screen1__tag">WE WILL MAKE IT POSSIBLE</div>
+                    </div>
+                    <div class="mouse" style="opacity: 0.7945;">
+                        <div class="mousewheel" style="opacity: 0.7945;">
+                        </div>
+                    </div>
+                </div>
+                <div class="screen2">
+                    <div class="screen2__content">
+                        <div class="screen2__content__subtitle">PLATINUM LODGING</div
+                            div class="screen2__content__title">Experience the difference</div>
+                            <div class="screen2__content__body">
+                                <p>Welcome to Platinum Lodging! We are excited you stopped by. Platinum lodging is a new vacation home rental company and we are looking for some great locations!</p>
+                                <br><p>We can help you make money with your investment! There are many reasons to choose Platinum Lodging to help your property earn money while you sit back and relax - we do all the work!</p>
+                            </div>
+                        </div>
+                        <div class="screen2__gallery">
+                            <div class="screen2__gallery__primary" style="transform: translate(-76.8px, 0px) rotate(-2.00003deg);"></div>
+                            <div class="screen2__gallery__secondary" style="transform: translate(76.8px, 75.36px) rotate(0.99986deg);"></div>
+                        </div>
+                    </div>
+                    <div class="screen3">
+                        <div class="screen3__scrollable">
+                            <div class="screen3__panel0">
+                                <div class="screen3__content__subtitle">HOSTINGS</div>
+                                <div class="screen3__content__title">Our Homes</div>
+                                <div class="screen3__content__body">Browse through our catalog of homes and get in touch to know more.</div><br>
+                                <div class="screen3__enquire">Enquire</div>
+                            </div>
+                            <div class="screen3__panel1 card"></div>
+                            <div class="screen3__panel2 card"></div>
+                            <div class="screen3__panel3 card"></div>
+                            <div class="screen3__panel4 card"></div>
+                            <div class="screen3__panel5 card"></div>
+                            <div class="screen3__panel6">
+                                <div class="screen3__content__subtitle">HOSTINGS</div>
+                                <div class="screen3__content__title">See More</div>
+                                <div class="screen3__content__body">Check out more houses that we are currently hosting.</div><br>
+                                <div class="screen3__enquire">More</div>
+                            </div>
+                            <div class="screen3__panel00"></div>
+                        </div>
+                    </div>
+                    <div class="screen4">
+                        <div class="screen2__content">
+                            <div class="screen2__content__subtitle">OUR SERVICES</div>
+                            <div class="screen2__content__title">What we offer</div>
+                            <div class="screen2__content__body">
+                                <p>Welcome to Platinum Lodging! We are excited you stopped by. Platinum lodging is a new vacation home rental company and we are looking for some great locations!</p><br>
+                                <p>We can help you make money with your investment! There are many reasons to choose Platinum Lodging to help your property earn money while you sit back and relax - we do all the work!</p>
+                            </div>
+                        </div>
+                        <div class="screen2__gallery">
+                            <div class="screen2__gallery__primary" style="transform: translate(-76.8px, 0px) rotate(-2.00003deg);"></div>
+                            <div class="screen2__gallery__secondary" style="transform: translate(76.8px, 75.36px) rotate(0.99986deg);"></div>
+                        </div>
+                    </div>
+                    <div class="screen5">
+                        <div class="screen2__content">
+                            <div class="screen2__content__subtitle">TESTIMONIALS</div>
+                            <div class="screen2__content__title">Our Guests' experiences</div>
+                            <div class="screen2__content__body">
+                                <p>Welcome to Platinum Lodging! We are excited you stopped by. Platinum lodging is a new vacation home rental company and we are looking for some great locations!</p><br>
+                                <p>We can help you make money with your investment! There are many reasons to choose Platinum Lodging to help your property earn money while you sit back and relax - we do all the work!</p>
+                            </div>
+                        </div>
+                        <div class="screen2__gallery">
+                            <div class="screen2__gallery__primary" style="transform: translate(-76.8px, 0px) rotate(-2.00003deg);"></div>
+                            <div class="screen2__gallery__secondary" style="transform: translate(76.8px, 75.36px) rotate(0.99986deg);"></div>
+                        </div>
+                    </div>
+                    <div class="screen6">
+                        <div class="screen2__content">
+                            <div class="screen2__content__subtitle">CONTACT</div>
+                            <div class="screen2__content__title">Get in touch</div>
+                            <div class="screen2__content__body">
+                                <p>Welcome to Platinum Lodging! We are excited you stopped by. Platinum lodging is a new vacation home rental company and we are looking for some great locations!</p><br>
+                                <p>We can help you make money with your investment! There are many reasons to choose Platinum Lodging to help your property earn money while you sit back and relax - we do all the work!</p>
+                            </div>
+                        </div>
+                        <div class="screen2__gallery">
+                            <div class="screen2__gallery__primary" style="transform: translate(-76.8px, 0px) rotate(-2.00003deg);"></div>
+                            <div class="screen2__gallery__secondary" style="transform: translate(76.8px, 75.36px) rotate(0.99986deg);"></div>
+                        </div>
+                    </div>
+                    <div class="footer">
+                        <div class="screen2__content">
+                            <div class="screen2__content__subtitle">FOOTER</div>
+                        </div>
+                    </div>
+                    <div class="header" id="header">
+                        <nav class="user-nav" id="user-nav">
+                            <div class="user-nav__company">
+                                <div class="user-nav__logo" id="user-nav__logo"></div>
+                                <span class="user-nav__title"><span class="Gold">P L A T I N U M </span>
+                                <span class="user-nav__sub-title">L O D G I N G</span>
+                            </span>
+                        </div>
+                        <div class="user-nav__nav">
+                            <span class="user-nav__nav__home">Home</span>
+                            <span class="user-nav__nav__our-homes">Our Homes</span>
+                            <span class="user-nav__nav__partner-up">Partner Up</span>
+                            <span class="user-nav__nav__about-us">About Us</span>
+                        </div>
+                        <div class="user-nav__contact">Contact</div>
+                    </nav>
+                </div>
+            </div>
+        </div>
+      <script src="/static/js/bundle.js"></script><script src="/static/js/0.chunk.js"></script><script src="/static/js/main.chunk.js"></script>
+</body></html>

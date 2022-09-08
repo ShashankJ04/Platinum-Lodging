@@ -1,22 +1,1065 @@
-.carousel img {
-    height:700px;
-    width: 100%;
-    object-fit:scale-down;
-    object-position: center;
-    
+:root {
+  --Brown-1: #CC9544;
+  --Brown-2: #603601;
+  --Brown-3: #361500;
+  --Brown-4: #1C0A00;
+  --Gold: #ab844f;
+  --Light: rgb(248,245,240); }
+
+* {
+  margin: 0;
+  padding: 0; }
+
+*, *::after, *::before {
+  box-sizing: inherit; }
+
+html {
+  box-sizing: border-box;
+  font-size: 62.5%;
+  overflow-x: hidden;
+  scroll-snap-type: y mandatory; }
+
+body {
+  font-weight: 400;
+  line-height: 1.6;
+  min-height: 100vh; }
+
+a, a:hover, a:visited, a:active {
+  color: inherit;
+  text-decoration: none; }
+
+@font-face {
+  font-family: Gilda;
+  src: url(../Fonts/GildaDisplay-Regular.ttf); }
+
+@font-face {
+  font-family: Argentum;
+  src: url(../Fonts/ArgentumSans-Regular.ttf); }
+
+@font-face {
+  font-family: Monarda;
+  src: url(../Fonts/Monarda.ttf); }
+
+@font-face {
+  font-family: Argentum2;
+  src: url(../Fonts/ArgentumSans-Thin.ttf); }
+
+@font-face {
+  font-family: Rampage1;
+  src: url(../Fonts/RampageMonoline.otf); }
+
+@font-face {
+  font-family: Rampage2;
+  src: url(../Fonts/RampageMonoline-Rounded.otf); }
+
+@font-face {
+  font-family: CG7;
+  src: url(../Fonts/CabinetGrotesk/CabinetGrotesk-Black.otf); }
+
+@font-face {
+  font-family: CG6;
+  src: url(../Fonts/CabinetGrotesk/CabinetGrotesk-Bold.otf); }
+
+@font-face {
+  font-family: CG5;
+  src: url(../Fonts/CabinetGrotesk/CabinetGrotesk-Extrabold.otf); }
+
+@font-face {
+  font-family: CG4;
+  src: url(../Fonts/CabinetGrotesk/CabinetGrotesk-Extralight.otf); }
+
+@font-face {
+  font-family: CG3;
+  src: url(../Fonts/CabinetGrotesk/CabinetGrotesk-Light.otf); }
+
+@font-face {
+  font-family: CG2;
+  src: url(../Fonts/CabinetGrotesk/CabinetGrotesk-Medium.otf); }
+
+@font-face {
+  font-family: CG1;
+  src: url(../Fonts/CabinetGrotesk/CabinetGrotesk-Regular.otf); }
+
+@font-face {
+  font-family: CG0;
+  src: url(../Fonts/CabinetGrotesk/CabinetGrotesk-Thin.otf); }
+
+.user-nav {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  font-size: 1.5rem;
+  font-family: Argentum;
+  font-weight: 400;
+  position: relative;
+  color: white;
+  margin-top: 2.5rem; }
+  .user-nav__company {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer; }
+  .user-nav__title {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    font-weight: 600;
+    align-items: center;
+    font-family: "Gilda";
+    font-size: 2rem; }
+  .user-nav__sub-title {
+    font-family: Argentum2;
+    font-size: 1rem; }
+  .user-nav__logo {
+    height: 3rem;
+    width: 7rem;
+    cursor: pointer;
+    background-image: url(./../img/logo.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    transition: .2s; }
+  .user-nav__nav {
+    display: flex;
+    width: 40vw;
+    justify-content: space-evenly;
+    transform: translateX(-5rem); }
+    .user-nav__nav > * {
+      cursor: pointer; }
+    .user-nav__nav__home:hover {
+      transition: 0.5s;
+      color: var(--Gold); }
+    .user-nav__nav__our-homes:hover {
+      transition: 0.5s;
+      color: var(--Gold); }
+    .user-nav__nav__partner-up:hover {
+      transition: 0.5s;
+      color: var(--Gold); }
+    .user-nav__nav__about-us:hover {
+      transition: 0.5s;
+      color: var(--Gold); }
+
+#user-nav.mode1 {
+  color: var(--Brown-3); }
+
+#user-nav__logo.mode1 {
+  background-image: url(./../img/logo-gold.png); }
+
+.Gold {
+  color: var(--Gold); }
+
+.screen1__content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  color: white;
+  transform: translateY(-2.5rem); }
+
+.screen1__subtag {
+  font-family: Argentum;
+  letter-spacing: 0.5rem;
+  word-spacing: 0.8rem;
+  font-size: 1.8rem;
+  color: var(--Gold);
+  animation-name: moveInBottomFast;
+  animation-duration: 12s;
+  animation-timing-function: ease-in-out;
+  animation-iteration-count: infinite; }
+
+.screen1__tag {
+  font-family: Gilda;
+  margin-top: 2rem;
+  font-size: 7rem;
+  letter-spacing: 0.5rem;
+  word-spacing: 0.8rem;
+  width: 60%;
+  animation-name: moveInBottom;
+  animation-duration: 12s;
+  animation-timing-function: ease-in-out;
+  animation-iteration-count: infinite; }
+
+@keyframes moveInBottom {
+  0% {
+    opacity: 0;
+    transform: translateY(2rem); }
+  30% {
+    opacity: 1;
+    transform: translateY(0); }
+  80% {
+    opacity: 1;
+    transform: translateY(0); }
+  100% {
+    opacity: 0;
+    transform: translateY(-2rem); } }
+
+@keyframes moveInBottomFast {
+  0% {
+    opacity: 0;
+    transform: translateY(2rem); }
+  20% {
+    opacity: 1;
+    transform: translateY(0); }
+  70% {
+    opacity: 1;
+    transform: translateY(0); }
+  100% {
+    opacity: 0;
+    transform: translateY(-2rem); } }
+
+#roll1, #roll2, #roll3 {
+  display: none; }
+
+#roll1.show, #roll2.show, #roll3.show {
+  display: flex; }
+
+.mouse {
+  position: absolute;
+  bottom: 10rem;
+  left: 50%;
+  width: 3rem;
+  height: 5rem;
+  border-radius: 100vh;
+  border: 2px solid white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transform: translateX(-50%); }
+  .mouse::before {
+    content: "";
+    width: 0.5rem;
+    height: 1rem;
+    border-radius: 100vh;
+    background-color: var(--Gold);
+    transform: translateY(-1rem);
+    animation: mousescroll 2s ease-in-out 8s infinite; }
+  .mouse::after {
+    content: "Scroll Down";
+    font-family: Argentum;
+    color: white;
+    font-size: 1.5rem;
+    position: absolute;
+    transform: translateY(5rem);
+    width: 10rem;
+    animation: show 1s ease-in 8s 1;
+    animation-fill-mode: backwards; }
+
+@keyframes mousescroll {
+  0% {
+    transform: translateY(-1rem); }
+  50% {
+    transform: translateY(0.5rem); }
+  100% {
+    transform: translateY(-1rem); } }
+
+@keyframes show {
+  0% {
+    opacity: 0; }
+  50% {
+    opacity: 0.5; }
+  100% {
+    opacity: 1; } }
+
+.screen2__gallery {
+  height: 100vh;
+  width: 30vw;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  align-self: flex-end; }
+  .screen2__gallery__primary {
+    position: absolute;
+    height: 25vw;
+    width: 15vw;
+    background-image: url(./../img/primary.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    transform: translateX(-5vw) rotate(-2deg); }
+  .screen2__gallery__secondary {
+    position: absolute;
+    height: 15vw;
+    width: 10vw;
+    background-image: url(./../img/secondary.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    transform: rotate(3deg);
+    transform: translate(5vw, 10vh) rotate(1deg); }
+
+.screen6__content {
+  text-align: left;
+  width: 50vw;
+  color: var(--Brown-3); }
+  .screen6__content__subtitle {
+    font-family: "Argentum";
+    color: var(--Gold);
+    font-size: 2rem;
+    letter-spacing: 0.25rem; }
+  .screen6__content__title {
+    font-family: "DG";
+    font-size: 5rem;
+    letter-spacing: 0.25rem; }
+  .screen6__content__body {
+    font-family: "Argentum2";
+    font-size: 1.5rem;
+    font-weight: 800;
+    width: 35vw; }
+
+.screen2__content {
+  text-align: left;
+  width: 50vw;
+  color: var(--Brown-3); }
+  .screen2__content__subtitle {
+    font-family: "Argentum";
+    color: var(--Gold);
+    font-size: 2rem;
+    letter-spacing: 0.25rem; }
+  .screen2__content__title {
+    font-family: "DG";
+    font-size: 5rem;
+    letter-spacing: 0.25rem; }
+  .screen2__content__body {
+    font-family: "Argentum2";
+    font-size: 1.5rem;
+    font-weight: 800;
+    width: 35vw; }
+
+.screen3__scroll {
+  position: absolute;
+  z-index: 1;
+  width: 6vw;
+  aspect-ratio: 1;
+  border-radius: 50%;
+  background-color: var(--Gold);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  color: white;
+  font-size: 5vh;
+  font-family: "Argentum";
+  font-weight: 800;
+  cursor: pointer;
+  transition: 0.5s;
+  user-select: none;
+  border: 2px solid white; }
+  .screen3__scroll:hover {
+    background-color: var(--Brown-2);
+    width: 6.5vw; }
+  .screen3__scroll__right {
+    transform: translateX(40vw); }
+  .screen3__scroll__left {
+    transform: translateX(-40vw); }
+
+#scroll__left {
+  opacity: 0;
+  cursor: inherit; }
+
+#scroll__right {
+  opacity: 1;
+  cursor: pointer; }
+
+#scroll__left.activate, #scroll__right.activate {
+  opacity: 1;
+  cursor: pointer; }
+
+#scroll__left.deactivate, #scroll__right.deactivate {
+  opacity: 0;
+  cursor: inherit; }
+
+.screen3__content__subtitle {
+  font-family: "Argentum";
+  color: var(--Gold);
+  font-size: 2rem;
+  letter-spacing: 0.25rem; }
+
+.screen3__content__title {
+  color: var(--Brown-3);
+  font-family: "DG";
+  font-size: 5rem;
+  letter-spacing: 0.25rem; }
+
+.screen3__content__body {
+  color: var(--Brown-3);
+  font-family: "Argentum2";
+  font-size: 1.5rem;
+  font-weight: 800; }
+
+.screen3__scrollable {
+  position: absolute;
+  left: 0;
+  height: 100vh;
+  width: 190vw;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-around;
+  transition: 0.5s; }
+
+.screen3__panel0 {
+  margin-left: 10vw;
+  margin-right: 10vw;
+  width: 20vw;
+  height: 77vh;
+  bottom: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  text-align: left; }
+
+.user-button {
+  display: flex;
+  font-family: "Argentum";
+  align-items: center;
+  font-weight: 500;
+  font-size: 2vh;
+  color: white;
+  background-color: var(--Gold);
+  padding: 1.5vh 4vh;
+  border-radius: 100vw;
+  border: none;
+  cursor: pointer;
+  transition: 0.5s; }
+  .user-button:hover {
+    color: white;
+    background-color: var(--Brown-2); }
+
+.screen3__panel1 {
+  background-image: url(./../img/card-1.jpg);
+  background-repeat: no-repeat;
+  background-size: cover; }
+
+.screen3__panel2 {
+  background-image: url(./../img/card-2.jpg);
+  background-repeat: no-repeat;
+  background-size: cover; }
+
+.screen3__panel3 {
+  background-image: url(./../img/card-3.jpg);
+  background-repeat: no-repeat;
+  background-size: cover; }
+
+.screen3__panel4 {
+  background-image: url(./../img/card-4.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center; }
+
+.screen3__panel5 {
+  background-image: url(./../img/card-5.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center; }
+
+.card {
+  width: 21vw;
+  height: 85vh;
+  box-shadow: 0.5rem 0 1rem rgba(0, 0, 0, 0.5);
+  transition: all 0.5s;
+  background-position: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-evenly;
+  cursor: pointer; }
+  .card::before {
+    position: absolute;
+    content: "";
+    height: 85vh;
+    width: inherit;
+    background-color: rgba(0, 0, 0, 0.7);
+    transition: 0.5s; }
+  .card::after {
+    position: absolute;
+    content: "";
+    bottom: 0;
+    left: 0;
+    width: 21vw;
+    height: 0;
+    background-image: linear-gradient(to top, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0));
+    transition: all 0.5s;
+    z-index: 0; }
+
+.card:hover {
+  height: 90vh;
+  transform: translateY(-0.5vh); }
+  .card:hover::before {
+    height: 90vh;
+    background-color: rgba(0, 0, 0, 0); }
+  .card:hover::after {
+    height: 75%;
+    background-image: linear-gradient(to top, black, rgba(0, 0, 0, 0)); }
+
+.screen3__panel__stars {
+  color: white;
+  display: flex;
+  z-index: 1;
+  flex-direction: row;
+  align-items: flex-start;
+  font-family: "Argentum";
+  transform: translateY(100%); }
+
+.screen3__panel__star {
+  width: 1.5vw;
+  margin: 0.1vw;
+  aspect-ratio: 1;
+  background-image: url(./../img/star.png);
+  background-repeat: no-repeat;
+  background-size: cover; }
+
+.screen3__panel__img {
+  width: 15vw;
+  aspect-ratio: 1;
+  border: 2px solid var(--Gold);
+  border-radius: 50%;
+  z-index: 1;
+  background-repeat: no-repeat;
+  background-size: cover;
+  transform: translateY(50%); }
+
+.screen3__panel__img1 {
+  background-image: url(./../img/card-1.jpg); }
+
+.screen3__panel__img2 {
+  background-image: url(./../img/card-2.jpg); }
+
+.screen3__panel__img3 {
+  background-image: url(./../img/card-3.jpg); }
+
+.screen3__panel__img4 {
+  background-image: url(./../img/card-4.jpg); }
+
+.screen3__panel__img5 {
+  background-image: url(./../img/card-5.jpg); }
+
+.screen3__panel__info {
+  color: white;
+  display: flex;
+  z-index: 1;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  font-family: "Gilda"; }
+
+.screen3__panel__title {
+  color: var(--Gold);
+  font-family: 'Argentum';
+  font-size: 2.5rem;
+  letter-spacing: 0.25rem; }
+
+.screen3__panel__price {
+  font-size: 3vh;
+  color: var(--Gold);
+  font-weight: 800; }
+
+.screen3__panel__location {
+  font-size: 3vh; }
+
+.screen3__panel__desc {
+  margin: 2vh;
+  font-size: 1.8vh;
+  width: 18vw; }
+
+#book1, #book2, #book3, #book4, #book5 {
+  position: absolute;
+  right: 0;
+  color: white;
+  border-top: 2px solid white;
+  border-bottom: 2px solid white;
+  border-left: 2px solid white;
+  display: flex;
+  z-index: 1;
+  margin-top: 4vh;
+  font-family: "Gilda";
+  padding: 0 4vw 0 1vw;
+  font-size: 2rem;
+  transition: 0.5s; }
+
+#book1.book__active, #book2.book__active, #book3.book__active, #book4.book__active, #book5.book__active {
+  border-top: 2px solid var(--Gold);
+  border-bottom: 2px solid var(--Gold);
+  border-left: 2px solid var(--Gold);
+  background-color: var(--Gold); }
+
+.screen5__stars {
+  color: white;
+  display: flex;
+  z-index: 1;
+  flex-direction: row;
+  align-items: flex-start;
+  font-family: "Argentum"; }
+
+.screen5__star {
+  width: 1.5vw;
+  margin: 0.1vw;
+  aspect-ratio: 1;
+  background-image: url(./../img/star.png);
+  background-repeat: no-repeat;
+  background-size: cover; }
+
+.screen4__content {
+  text-align: left;
+  width: 100vw;
+  color: var(--Brown-3);
+  display: flex;
+  flex-direction: column; }
+  .screen4__content__subtitle {
+    font-family: "Argentum";
+    color: var(--Gold);
+    font-size: 2rem;
+    letter-spacing: 0.25rem; }
+  .screen4__content__title {
+    font-family: "DG";
+    font-size: 5rem;
+    letter-spacing: 0.25rem; }
+  .screen4__content__header {
+    height: 25vh;
+    padding: 60vh 0 0 18vw; }
+
+.screen4__main__content {
+  width: 100vw;
+  height: 80vh; }
+
+.screen4__deck {
+  position: absolute;
+  display: flex;
+  flex-direction: row; }
+
+.deck1 {
+  top: 25vh;
+  right: 5vw; }
+
+.deck2 {
+  top: 50%;
+  right: 5vw; }
+
+.deck3 {
+  bottom: 0;
+  right: 5vw; }
+
+.screen4__card {
+  width: 20vw;
+  height: 20vh;
+  margin: 1vw;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center; }
+  .screen4__card__header {
+    display: flex;
+    flex-direction: column; }
+  .screen4__card__title {
+    font-family: "Argentum";
+    color: var(--Gold);
+    font-size: 3vh;
+    padding: 1vh; }
+  .screen4__card__desc {
+    align-self: center;
+    font-family: "Argentum2";
+    font-weight: 800;
+    font-size: 2vh;
+    padding: 0 0.5vw 0 0.5vw; }
+  .screen4__card__icon {
+    top: 1vh;
+    left: 1vw;
+    width: 3vw;
+    aspect-ratio: 1;
+    background-repeat: no-repeat;
+    background-size: cover; }
+  .screen4__card__icon1 {
+    background-image: url(./../img/listing.png); }
+  .screen4__card__icon2 {
+    background-image: url(./../img/guest.png); }
+  .screen4__card__icon3 {
+    background-image: url(./../img/clean.png); }
+  .screen4__card__icon4 {
+    background-image: url(./../img/pricing.png); }
+  .screen4__card__icon5 {
+    background-image: url(./../img/report.png); }
+  .screen4__card__icon6 {
+    background-image: url(./../img/owner.png); }
+
+.screen5__header {
+  position: absolute;
+  left: 0;
+  margin-left: 5vw;
+  text-align: left;
+  width: 50vw;
+  color: white; }
+  .screen5__header__subtitle {
+    font-family: "Argentum";
+    color: var(--Gold);
+    font-size: 2rem;
+    letter-spacing: 0.25rem; }
+  .screen5__header__title {
+    font-family: "DG";
+    font-size: 5rem;
+    letter-spacing: 0.25rem; }
+  .screen5__header__desc {
+    align-self: center;
+    font-family: "Argentum2";
+    font-weight: 800;
+    font-size: 2vh;
+    padding: 0 0.5vw 0 0.5vw; }
+
+.screen5__comments {
+  position: absolute;
+  right: 0;
+  margin-right: 5vw;
+  width: 40vw;
+  height: 70vh;
+  transform: translateX(-10%);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center; }
+
+@keyframes moveInLeftFast {
+  0% {
+    opacity: 0;
+    transform: translateX(2vw); }
+  20% {
+    opacity: 1;
+    transform: translateY(0); }
+  70% {
+    opacity: 1;
+    transform: translateY(0); }
+  100% {
+    opacity: 0;
+    transform: translateX(-2vw); } }
+
+.screen5__comment {
+  width: 100%;
+  height: 30vh;
+  background-image: linear-gradient(to right, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.7), black, rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0));
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  justify-content: space-evenly;
+  align-items: center;
+  animation-name: moveInLeftFast;
+  animation-duration: 12s;
+  animation-timing-function: ease-in-out;
+  animation-iteration-count: infinite; }
+  .screen5__comment__stars {
+    position: relative;
+    padding: 0;
+    margin: 0; }
+  .screen5__comment__desc {
+    color: white;
+    font-family: "Argentum2";
+    font-weight: 800;
+    font-size: 2vh;
+    padding: 0 0.5vw 0 0.5vw; }
+  .screen5__comment__person {
+    font-family: "Argentum";
+    color: white;
+    font-size: 2vh;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-evenly; }
+    .screen5__comment__person__img {
+      width: 3vw;
+      aspect-ratio: 1;
+      border: 2px solid var(--Gold);
+      border-radius: 50%;
+      margin-right: 1vw;
+      z-index: 1;
+      background-color: red;
+      background-repeat: no-repeat;
+      background-size: cover; }
+
+#comm1, #comm2, #comm3 {
+  display: none; }
+
+#comm1.show, #comm2.show, #comm3.show {
+  display: flex; }
+
+.person1 {
+  background-image: url(./../img/card-1.jpg); }
+
+.person2 {
+  background-image: url(./../img/card-2.jpg); }
+
+.person3 {
+  background-image: url(./../img/card-3.jpg); }
+
+.person4 {
+  background-image: url(./../img/card-4.jpg); }
+
+.person5 {
+  background-image: url(./../img/card-5.jpg); }
+
+.person6 {
+  background-image: url(./../img/card-1.jpg); }
+
+.title__in2, .title__in3, .title__in5, .title__in6 {
+  transform: translateY(20%); }
+
+.title__in5h {
+  transform: translateX(10%); }
+
+.title__in4 {
+  transform: translateY(10%); }
+
+.form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between; }
+
+.inp {
+  width: 25vw;
+  height: 5vh;
+  background: none;
+  border: none;
+  border-bottom: 2px solid var(--Brown-3);
+  outline: none;
+  font-family: "Argentum2";
+  font-weight: 800;
+  font-size: 2.5vh;
+  margin-top: 5vh; }
+
+.btn-margin {
+  margin-top: 5vh; }
+
+.honey {
+  display: none; }
+
+#facebook {
+  background-image: url(./../img/facebook.png); }
+  #facebook:hover {
+    background-image: url(./../img/facebook-gold.png); }
+
+#twitter {
+  background-image: url(./../img/twitter.png); }
+  #twitter:hover {
+    background-image: url(./../img/twitter-gold.png); }
+
+#youtube {
+  background-image: url(./../img/youtube.png); }
+  #youtube:hover {
+    background-image: url(./../img/youtube-gold.png); }
+
+#instagram {
+  background-image: url(./../img/instagram.png); }
+  #instagram:hover {
+    background-image: url(./../img/instagram-gold.png); }
+
+.footer___row {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  justify-content: space-evenly; }
+
+.footer___col {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+  font-family: "Argentum";
+  color: white; }
+  .footer___col__head {
+    cursor: pointer;
+    font-size: 2vh;
+    transition: 0.5s;
+    margin-bottom: 1.5vh; }
+    .footer___col__head:hover {
+      color: var(--Gold); }
+  .footer___col__sub {
+    cursor: pointer;
+    font-size: 1.8vh;
+    transition: 0.5s; }
+    .footer___col__sub:hover {
+      color: var(--Gold); }
+  .footer___col__icon {
+    cursor: pointer;
+    width: 2vw;
+    aspect-ratio: 1;
+    background-repeat: no-repeat;
+    background-size: cover;
+    transition: 0.5s; }
+
+.footer___company {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  margin-bottom: 1.5vh; }
+
+.footer___title {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  font-weight: 600;
+  align-items: center;
+  font-family: "Gilda";
+  font-size: 2rem; }
+
+.footer___sub-title {
+  font-family: Argentum2;
+  font-size: 1rem;
+  color: white; }
+
+.footer___logo {
+  height: 3rem;
+  width: 7rem;
+  cursor: pointer;
+  background-image: url(./../img/logo.png);
+  background-repeat: no-repeat;
+  background-size: cover;
+  transition: .2s; }
+
+.container {
+  max-width: 100vw;
+  height: 570vh;
+  position: relative;
+  z-index: 0; }
+
+.header {
+  position: fixed;
+  height: 11rem;
+  width: 100vw;
+  background-color: transparent;
+  box-shadow: none;
+  transition: 0.8s;
+  z-index: 2; }
+
+#header.mode0 {
+  z-index: -1;
+  opacity: 0; }
+
+#header.mode1 {
+  background-color: white;
+  box-shadow: 0 1rem 1rem rgba(0, 0, 0, 0.1); }
+
+.screen1 {
+  position: absolute;
+  top: 0;
+  width: 100vw;
+  height: 100vh;
+  transition: 0.5s;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: 30%;
+  animation: slide 36s infinite;
+  scroll-snap-align: start; 
+  opacity: 1;
 }
-.carousel-control-prev-icon {
-    background-image: url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='%23000' viewBox='0 0 8 8'%3E%3Cpath d='M5.25 0l-4 4 4 4 1.5-1.5-2.5-2.5 2.5-2.5-1.5-1.5z'/%3E%3C/svg%3E") !important;
-    
-   }
-   
-.carousel-control-next-icon {
-     background-image: url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='%23000' viewBox='0 0 8 8'%3E%3Cpath d='M2.75 0l-1.5 1.5 2.5 2.5-2.5 2.5 1.5 1.5 4-4-4-4z'/%3E%3C/svg%3E") !important;
-}
-.carousel-caption{
-   font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-   /* -webkit-box-shadow: inset 0 0 20rem rgba(0, 0, 0, 1); */
-    /* box-shadow: inset 0 0 20rem rgba(0, 0, 0, 1); */
-    background: linear-gradient(to left,rgba(255, 255, 255, 0),rgba(255, 255, 255, 0),rgba(255, 255, 255, 0), rgba(57, 57, 57, 0), rgba(1, 1, 1, 0.636) 50%, rgba(0, 0, 0, 0.651) 50%, rgba(255, 255, 255, 0),rgba(255, 255, 255, 0),rgba(255, 255, 255, 0),rgba(255, 255, 255, 0) 100%);
-   
-}
+  .screen1::before {
+    content: "";
+    position: absolute;
+    background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.6));
+    width: 100vw;
+    height: 100vh; }
+
+@keyframes slide {
+  0% {
+    background-image: url(./../img/bg-1.jpg); }
+  28% {
+    background-image: url(./../img/bg-1.jpg); }
+  33% {
+    background-image: url(./../img/bg-2.jpg); }
+  62% {
+    background-image: url(./../img/bg-2.jpg); }
+  67% {
+    background-image: url(./../img/bg-3.jpg); }
+  95% {
+    background-image: url(./../img/bg-3.jpg); }
+  100% {
+    background-image: url(./../img/bg-1.jpg); } }
+
+.screen2 {
+  position: absolute;
+  top: 100vh;
+  width: 100vw;
+  height: 80vh;
+  background-color: var(--Light);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  scroll-snap-align: center; }
+
+.screen3 {
+  position: absolute;
+  top: 280vh;
+  width: 100vw;
+  height: 100vh;
+  background-color: var(--Light);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  scroll-snap-align: center; }
+
+.screen4 {
+  position: absolute;
+  top: 180vh;
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  scroll-snap-align: start;
+  background-color: var(--Light);
+  background-image: url(./../img/bg-4.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center; }
+
+.screen5 {
+  position: absolute;
+  top: 380vh;
+  width: 100vw;
+  height: 80vh;
+  background-color: transparent;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  scroll-snap-align: center; }
+
+.screen6 {
+  position: absolute;
+  top: 460vh;
+  width: 100vw;
+  height: 80vh;
+  background-color: var(--Light);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  scroll-snap-align: center; }
+
+.footer {
+  position: absolute;
+  top: 540vh;
+  width: 100vw;
+  height: 30vh;
+  background-color: var(--Brown-2);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-evenly;
+  justify-content: center;
+  scroll-snap-align: end; }
+
+.background {
+  position: fixed;
+  width: 100vw;
+  height: 100vh;
+  z-index: -2;
+  background-image: url(./../img/card-1.jpg);
+  background-repeat: no-repeat;
+  background-size: cover; }
+  .background::before {
+    content: "";
+    position: absolute;
+    background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4));
+    width: 100vw;
+    height: 100vh; }
