@@ -1,0 +1,19 @@
+<div class="header" id="header">
+    <nav class="user-nav" id="user-nav">
+        <div class="user-nav__company">
+            <div class="user-nav__logo" id="user-nav__logo" onclick="redirectIt(this)" href={{ url_for('home') }}></div>
+            <span class="user-nav__title">
+                <span class="Gold">P L A T I N U M </span>
+                <span class="user-nav__sub-title">L O D G I N G</span>
+            </span>
+        </div>
+        <div class="user-nav__nav">
+            <span class="user-nav__nav__home" onclick="redirectIt(this)" href={{ url_for('home') }}>Home</span>
+            <span class="user-nav__nav__our-homes" onclick="redirectIt(this)" href={{ url_for('all_properties') }}>Our Homes</span>
+            <span class="user-nav__nav__partner-up">Partner Up</span>
+            <span class="user-nav__nav__about-us">About Us</span>
+        </div>
+        <div class="user-nav__contact">Contact</div>
+    </nav>
+</div>
+

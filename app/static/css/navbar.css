@@ -1,0 +1,406 @@
+:root {
+    --Brown-1: #CC9544;
+    --Brown-2: #603601;
+    --Brown-3: #361500;
+    --Brown-4: #1C0A00;
+    --Gold: #ab844f;
+    --Light: rgb(248, 245, 240);
+}
+
+body {
+    height: 200vh;
+}
+
+a,
+a:hover,
+a:visited,
+a:active {
+    color: inherit;
+    text-decoration: none;
+}
+
+@font-face {
+    font-family: Gilda;
+    src: url(../Fonts/GildaDisplay-Regular.ttf);
+}
+
+@font-face {
+    font-family: Argentum2;
+    src: url(../Fonts/ArgentumSans-Thin.ttf);
+}
+
+@font-face {
+    font-family: Argentum;
+    src: url(../Fonts/ArgentumSans-Regular.ttf);
+}
+
+.NV__nav__content {
+    margin-top: 1.56rem;
+}
+
+
+.NV__nav__company {
+    position: absolute;
+    left: 3.125rem;
+    width: 15vw;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+}
+
+.NV__nav__company__logo {
+    min-width: 4.375rem;
+    min-height: 1.5625rem;
+    background-image: url(./../img/logo-gold.png);
+    background-repeat: no-repeat;
+    background-size: contain;
+}
+
+.NV__nav__company__name {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    transform: translateY(-0.3125rem);
+}
+
+.NV__nav__company__name__first {
+    color: var(--Gold);
+    font-size: 1.25rem;
+    font-family: Gilda;
+    font-weight: 800;
+    letter-spacing: 0.25rem;
+}
+
+.NV__nav__company__name__last {
+    font-size: 0.625rem;
+    font-weight: 800;
+    font-family: Argentum2;
+    letter-spacing: 0.25rem;
+}
+
+.NV__nav__button {
+    position: absolute;
+    right: 0;
+    width: 18.75rem;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+}
+
+.NV__nav__list {
+    width: 60vw;
+    height: 50%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-evenly;
+    align-self: center;
+    margin-top: 0;
+    font-family: Argentum;
+    font-size: 0.9375rem;
+}
+
+.NV__nav__list>*:hover {
+    color: var(--Gold);
+}
+
+.NV__Gold {
+    color: var(--Gold);
+}
+
+.NV__user-button {
+    visibility: visible;
+    display: flex;
+    font-family: "Argentum";
+    align-items: center;
+    font-weight: 500;
+    font-size: 0.9375rem;
+    color: white;
+    background-color: var(--Gold);
+    padding: 0.625rem 1.56rem;
+    border-radius: 100vw;
+    border: none;
+    cursor: pointer;
+    transition: 0.5s;
+}
+
+.NV__user-button:hover {
+    color: white;
+    background-color: var(--Brown-2);
+}
+
+.NV__expand-button {
+    visibility: hidden;
+    display: flex;
+    min-width: 2.1875rem;
+    aspect-ratio: 1;
+    border-radius: 50%;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    border: 2px solid var(--Gold);
+    transform: translateX(5vw);
+    transition: 0.2s;
+    z-index: 3;
+}
+
+.NV__expand-line {
+    width: 0.9375rem;
+    height: 2px;
+    background-color: var(--Gold);
+    margin-bottom: 2px;
+    transition: 0.2s;
+}
+
+#NV__expand.NV__active {
+    border: 2px solid var(--Gold);
+}
+
+#NV__expand.NV__clicked {
+    border: 2px solid var(--Gold);
+}
+
+#NV__expand1.NV__active,
+#NV__expand2.NV__active,
+#NV__expand3.NV__active {
+    background-color: var(--Gold);
+}
+
+#NV__expand1.NV__clicked {
+    background-color: var(--Gold);
+    margin-bottom: 0px;
+    transform: translateY(2px) rotateZ(45deg);
+}
+
+#NV__expand2.NV__clicked {
+    opacity: 0;
+    margin-bottom: 0px;
+}
+
+#NV__expand3.NV__clicked {
+    background-color: var(--Gold);
+    margin-bottom: 0px;
+    transform: translateY(-2px) rotateZ(-45deg);
+}
+
+.NV__header {
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100vw;
+    height: 5.625rem;
+    background-color: white;
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    justify-content: space-around;
+    color: var(--Brown-3);
+    box-shadow: 0 0.625rem 0.625rem rgba(0, 0, 0, 0.1);
+    z-index: 3;
+    transition: 0.5s;
+    margin: 0;
+}
+
+.NV__hidden {
+    opacity: 0;
+}
+
+.NV__hide {
+    transition: 0.5s;
+    visibility: hidden;
+}
+
+.NV__hide-b {
+    display: none;
+}
+
+#NV__header.NV__expand {
+    height: 100vh;
+}
+
+@media only screen and (min-width : 320px) and (max-width : 650px) and (min-height : 0px) and (orientation: portrait) {
+    .NV__user-button {
+        font-size: 0.78125rem;
+        padding: 0.625rem 1.875rem;
+    }
+
+    .NV__nav__company {
+        left: 4.375rem;
+        transform: translateY(0.3125rem);
+    }
+
+    .NV__nav__company__logo {
+        min-width: 3.75rem;
+        min-height: 1.5625rem;
+    }
+
+    .NV__nav__company__name__first {
+        font-size: 0.9375rem;
+    }
+
+    .NV__nav__button {
+        width: 1.875rem;
+    }
+
+    .NV__header {
+        height: 5rem;
+    }
+
+    #NV__nav__list.NV__clicked {
+        visibility: visible;
+        opacity: 1;
+    }
+
+    .NV__nav__content {
+        margin-top: 1.56rem;
+    }
+
+    #NV__contact-button {
+        visibility: hidden;
+    }
+
+    #NV__expand {
+        visibility: visible;
+    }
+
+    .NV__nav__list {
+        visibility: hidden;
+        flex-direction: column;
+        font-family: Gilda;
+        font-size: 1.5625rem;
+        color: #ab844f;
+        transition: 0.4s;
+        opacity: 0;
+    }
+}
+
+@media only screen and (min-width: 321px) and (max-width: 916px) and (orientation: landscape) {
+    .NV__nav__content {
+        margin-top: 1.56rem;
+    }
+
+    #NV__header {
+        height: 5rem;
+    }
+
+    .NV__nav__company {
+        left: 3.125rem;
+        transform: translateY(0.3125rem);
+    }
+
+    .NV__nav__company__logo {
+        min-width: 3.125rem;
+        min-height: 1.875rem;
+    }
+
+    .NV__nav__company__name__first {
+        font-size: 0.78125rem;
+    }
+
+    .NV__nav__company__name__last {
+        font-size: 0.53125rem;
+    }
+
+    .NV__nav__button {
+        width: 12.5rem;
+    }
+
+    .NV__nav__list {
+        width: 50vw;
+        margin-top: 0;
+        font-size: 0.625rem;
+    }
+
+    .NV__user-button {
+        font-size: 0.625rem;
+        padding: 0.625rem 1.25rem 0.625rem 1.25rem;
+    }
+}
+
+@media only screen and (min-width : 651px) and (max-width : 913px) and (orientation: portrait) {
+    .NV__user-button {
+        font-size: 0.78125rem;
+        padding: 0.625rem 1.875rem;
+    }
+
+    .NV__nav__company {
+        left: 7.5rem;
+        transform: translateY(0.3125rem);
+    }
+
+    .NV__nav__company__logo {
+        min-width: 6.25rem;
+        min-height: 3.125rem;
+    }
+
+    .NV__nav__company__name__first {
+        font-size: 1.875rem;
+    }
+
+    .NV__nav__company__name__last {
+        font-size: 1.25rem;
+    }
+
+    .NV__nav__button {
+        width: 6.25rem;
+    }
+
+    #NV__expand {
+        min-width: 3.75rem;
+        transform: translateY(0.625rem);
+    }
+
+    .NV__expand-line {
+        width: 1.5625rem;
+        margin: 2px 0 2px 0;
+    }
+
+    #NV__expand1.NV__clicked {
+        width: 1.5625rem;
+        background-color: var(--Gold);
+        margin-bottom: 0px;
+        transform: translateY(3px) rotateZ(45deg);
+    }
+
+    #NV__expand3.NV__clicked {
+        width: 1.5625rem;
+        background-color: var(--Gold);
+        margin-bottom: 0px;
+        transform: translateY(-3px) rotateZ(-45deg);
+    }
+
+    .NV__header {
+        height: 8.75rem;
+    }
+
+    #NV__nav__list.NV__clicked {
+        visibility: visible;
+        opacity: 1;
+    }
+
+    .NV__nav__content {
+        margin-top: 1.875rem;
+    }
+
+    #NV__contact-button {
+        visibility: hidden;
+    }
+
+    #NV__expand {
+        visibility: visible;
+    }
+
+    .NV__nav__list {
+        visibility: hidden;
+        flex-direction: column;
+        font-family: Gilda;
+        font-size: 4.375rem;
+        color: #ab844f;
+        transition: 0.4s;
+        opacity: 0;
+    }
+}

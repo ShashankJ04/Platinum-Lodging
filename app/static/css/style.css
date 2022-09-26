@@ -3,7 +3,7 @@
   --Brown-2: #603601;
   --Brown-3: #361500;
   --Brown-4: #1C0A00;
-  --Gold: rgb(171,132,79);
+  --Gold: #ab844f;
   --Light: rgb(248,245,240); }
 
 * {
@@ -15,7 +15,9 @@
 
 html {
   box-sizing: border-box;
-  font-size: 62.5%; }
+  font-size: 62.5%;
+  overflow-x: hidden;
+  overscroll-behavior: none; }
 
 body {
   font-weight: 400;
@@ -23,21 +25,10 @@ body {
   min-height: 100vh;
   overflow-x: hidden; }
 
-/*.cursor {
-    pointer-events: none;
-    
-    &__ball {
-      position: fixed;
-      top: 0;
-      left: 0;
-      mix-blend-mode: difference;
-      z-index: 1000;
-      
-      circle {
-        fill: #f7f8fa;
-      }
-    }      
-  } */
+a, a:hover, a:visited, a:active {
+  color: inherit;
+  text-decoration: none; }
+
 @font-face {
   font-family: Gilda;
   src: url(../Fonts/GildaDisplay-Regular.ttf); }
@@ -94,7 +85,7 @@ body {
   font-family: CG0;
   src: url(../Fonts/CabinetGrotesk/CabinetGrotesk-Thin.otf); }
 
-/* .user-nav {
+.user-nav {
   display: flex;
   justify-content: space-around;
   align-items: center;
@@ -103,63 +94,51 @@ body {
   font-weight: 400;
   position: relative;
   color: white;
-  margin-top: 2.5rem; }
+  margin-top: 3.5vh; }
   .user-nav__company {
     display: flex;
     align-items: center;
-    justify-content: center; }
+    justify-content: center;
+    cursor: pointer; }
   .user-nav__title {
     display: flex;
     flex-direction: column;
     justify-content: center;
     font-weight: 600;
     align-items: center;
-    font-family: Gilda;
+    font-family: "Gilda";
     font-size: 2rem; }
   .user-nav__sub-title {
     font-family: Argentum2;
     font-size: 1rem; }
   .user-nav__logo {
-    height: 3rem;
+    transform: translateY(1rem);
+    height: 5rem;
     width: 7rem;
     cursor: pointer;
     background-image: url(./../img/logo.png);
     background-repeat: no-repeat;
-    background-size: cover;
+    background-size: contain;
     transition: .2s; }
   .user-nav__nav {
     display: flex;
     width: 40vw;
     justify-content: space-evenly;
-    transform: translateX(-5rem);
-    /*
-
-        &__home{
-            
-        }
-        &__our-homes{
-    
-        }
-        &__partner-up{
-    
-        }
-        &__about-us{
-        
-        }
-
-        }
+    transform: translateX(-3.5vw); }
     .user-nav__nav > * {
       cursor: pointer; }
-  .user-nav__contact {
-    display: flex;
-    align-items: center;
-    font-weight: 500;
-    font-size: 1.5rem;
-    color: white;
-    background-color: var(--Gold);
-    padding: 1rem 3rem;
-    border-radius: 100vw;
-    cursor: pointer; }
+    .user-nav__nav__home:hover {
+      transition: 0.5s;
+      color: var(--Gold); }
+    .user-nav__nav__our-homes:hover {
+      transition: 0.5s;
+      color: var(--Gold); }
+    .user-nav__nav__partner-up:hover {
+      transition: 0.5s;
+      color: var(--Gold); }
+    .user-nav__nav__about-us:hover {
+      transition: 0.5s;
+      color: var(--Gold); }
 
 #user-nav.mode1 {
   color: var(--Brown-3); }
@@ -168,7 +147,7 @@ body {
   background-image: url(./../img/logo-gold.png); }
 
 .Gold {
-  color: var(--Gold); } */
+  color: var(--Gold); }
 
 .screen1__content {
   display: flex;
@@ -177,18 +156,20 @@ body {
   justify-content: center;
   text-align: center;
   color: white;
-  transform: translateY(-2.5rem); }
+  transform: translateY(-3vh);
+  opacity: 1; }
 
 .screen1__subtag {
   font-family: Argentum;
-  letter-spacing: 0.5rem;
-  word-spacing: 0.8rem;
-  font-size: 1.8rem;
+  letter-spacing: 0.5vw;
+  word-spacing: 1vw;
+  font-size: 3vh;
   color: var(--Gold);
   animation-name: moveInBottomFast;
   animation-duration: 12s;
   animation-timing-function: ease-in-out;
-  animation-iteration-count: infinite; }
+  animation-iteration-count: infinite;
+  opacity: 1; }
 
 .screen1__tag {
   font-family: Gilda;
@@ -200,7 +181,8 @@ body {
   animation-name: moveInBottom;
   animation-duration: 12s;
   animation-timing-function: ease-in-out;
-  animation-iteration-count: infinite; }
+  animation-iteration-count: infinite;
+  opacity: 1; }
 
 @keyframes moveInBottom {
   0% {
@@ -238,7 +220,7 @@ body {
 
 .mouse {
   position: absolute;
-  bottom: 10rem;
+  bottom: 15vh;
   left: 50%;
   width: 3rem;
   height: 5rem;
@@ -283,6 +265,25 @@ body {
   100% {
     opacity: 1; } }
 
+.screen6__content {
+  text-align: left;
+  width: 50vw;
+  color: var(--Brown-3); }
+  .screen6__content__subtitle {
+    font-family: "Argentum";
+    color: var(--Gold);
+    font-size: 2rem;
+    letter-spacing: 0.25rem; }
+  .screen6__content__title {
+    font-family: "Gilda";
+    font-size: 5rem;
+    letter-spacing: 0.25rem; }
+  .screen6__content__body {
+    font-family: "Argentum2";
+    font-size: 1.5rem;
+    font-weight: 800;
+    width: 35vw; }
+
 .screen2__gallery {
   height: 100vh;
   width: 30vw;
@@ -292,20 +293,19 @@ body {
   align-self: flex-end; }
   .screen2__gallery__primary {
     position: absolute;
-    height: 25vw;
-    width: 15vw;
+    height: 50vh;
+    aspect-ratio: 0.6;
     background-image: url(./../img/primary.jpg);
-    background-repeat: none;
+    background-repeat: no-repeat;
     background-size: cover;
-    transform: translateX(-5vw) rotate(-2deg); }
+    transform: translateX(-6vw) rotate(-2deg); }
   .screen2__gallery__secondary {
     position: absolute;
-    height: 15vw;
-    width: 10vw;
+    height: 30vh;
+    aspect-ratio: 0.6;
     background-image: url(./../img/secondary.jpg);
-    background-repeat: none;
+    background-repeat: no-repeat;
     background-size: cover;
-    transform: rotate(3deg);
     transform: translate(5vw, 10vh) rotate(1deg); }
 
 .screen2__content {
@@ -318,7 +318,7 @@ body {
     font-size: 2rem;
     letter-spacing: 0.25rem; }
   .screen2__content__title {
-    font-family: "DG";
+    font-family: "Gilda";
     font-size: 5rem;
     letter-spacing: 0.25rem; }
   .screen2__content__body {
@@ -327,8 +327,67 @@ body {
     font-weight: 800;
     width: 35vw; }
 
+.user-button {
+  display: flex;
+  font-family: "Argentum";
+  align-items: center;
+  font-weight: 500;
+  font-size: 2vh;
+  color: white;
+  background-color: var(--Gold);
+  padding: 1.5vh 4vh;
+  border-radius: 100vw;
+  border: none;
+  cursor: pointer;
+  transition: 0.5s; }
+  .user-button:hover {
+    color: white;
+    background-color: var(--Brown-2); }
+
+.screen3__scroll {
+  position: absolute;
+  z-index: 1;
+  width: 6vw;
+  aspect-ratio: 1;
+  border-radius: 50%;
+  background-color: var(--Gold);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  color: white;
+  font-size: 5vh;
+  font-family: "Argentum";
+  font-weight: 800;
+  cursor: pointer;
+  transition: 0.5s;
+  user-select: none;
+  border: 2px solid white; }
+  .screen3__scroll:hover {
+    background-color: var(--Brown-2);
+    width: 6.5vw; }
+  .screen3__scroll__right {
+    transform: translateX(40vw); }
+  .screen3__scroll__left {
+    transform: translateX(-40vw); }
+
+#scroll__left {
+  opacity: 0;
+  cursor: inherit; }
+
+#scroll__right {
+  opacity: 1;
+  cursor: pointer; }
+
+#scroll__left.activate, #scroll__right.activate {
+  opacity: 1;
+  cursor: pointer; }
+
+#scroll__left.deactivate, #scroll__right.deactivate {
+  opacity: 0;
+  cursor: inherit; }
+
 .screen3__content__subtitle {
-  color: var(--Brown-3);
   font-family: "Argentum";
   color: var(--Gold);
   font-size: 2rem;
@@ -336,7 +395,7 @@ body {
 
 .screen3__content__title {
   color: var(--Brown-3);
-  font-family: "DG";
+  font-family: "Gilda";
   font-size: 5rem;
   letter-spacing: 0.25rem; }
 
@@ -347,137 +406,492 @@ body {
   font-weight: 800; }
 
 .screen3__scrollable {
-  position: relative;
-  height: 90vh;
-  width: 100vw;
-  overflow-x: scroll;
+  position: absolute;
+  left: 0;
+  height: 100vh;
+  width: 190vw;
   display: flex;
-  flex-wrap: wrap;
-  flex-direction: column;
-  -ms-overflow-style: none;
-  scrollbar-width: none;
-  scroll-snap-type: x mandatory; }
-
-.screen3__scrollable::-webkit-scrollbar {
-  display: none; }
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-around;
+  transition: 0.5s; }
 
 .screen3__panel0 {
-  position: absolute;
-  width: 25vw;
-  height: 100%;
+  margin-left: 10vw;
+  margin-right: 10vw;
+  width: 20vw;
+  height: 77vh;
+  bottom: 0;
   display: flex;
   flex-direction: column;
   justify-content: center;
-  align-items: center;
-  text-align: center;
-  left: 15rem; }
-
-.screen3__enquire {
-  display: flex;
-  font-family: "Argentum";
-  align-items: center;
-  font-weight: 500;
-  font-size: 1.5rem;
-  color: white;
-  background-color: var(--Gold);
-  padding: 1rem 3rem;
-  border-radius: 100vw;
-  cursor: pointer; }
+  align-items: flex-start;
+  text-align: left; }
 
 .screen3__panel1 {
-  left: 60rem;
   background-image: url(./../img/card-1.jpg);
   background-repeat: no-repeat;
   background-size: cover; }
 
 .screen3__panel2 {
-  left: 105rem;
   background-image: url(./../img/card-2.jpg);
   background-repeat: no-repeat;
   background-size: cover; }
 
 .screen3__panel3 {
-  left: 150rem;
   background-image: url(./../img/card-3.jpg);
   background-repeat: no-repeat;
   background-size: cover; }
 
 .screen3__panel4 {
-  left: 195rem;
   background-image: url(./../img/card-4.jpg);
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center; }
 
 .screen3__panel5 {
-  left: 240rem;
   background-image: url(./../img/card-5.jpg);
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center; }
 
-.screen3__panel6 {
-  position: absolute;
-  width: 25vw;
-  height: 100%;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
-  left: 285rem; }
-
-.screen3__panel00 {
-  position: absolute;
-  width: 1px;
-  height: 1px;
-  left: 330rem; }
+.no-select {
+  -webkit-user-select: none;
+  -ms-user-select: none;
+  user-select: none; }
 
 .card {
-  position: absolute;
-  width: 25vw;
-  height: 90%;
+  width: 21vw;
+  height: 85vh;
   box-shadow: 0.5rem 0 1rem rgba(0, 0, 0, 0.5);
-  align-self: center;
-  justify-self: center;
   transition: all 0.5s;
   background-position: center;
-  transform: translateY(6%); }
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-evenly;
+  cursor: pointer; }
   .card::before {
     position: absolute;
     content: "";
-    height: 100%;
-    width: 25vw;
-    top: 0;
-    left: 0;
-    background-color: rgba(0, 0, 0, 0.3);
-    transition: all 0.5s; }
+    height: 85vh;
+    width: inherit;
+    background-color: rgba(0, 0, 0, 0.7);
+    transition: 0.5s; }
   .card::after {
     position: absolute;
     content: "";
     bottom: 0;
     left: 0;
-    width: 25vw;
-    height: 10%;
+    width: 21vw;
+    height: 0;
     background-image: linear-gradient(to top, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0));
-    transition: all 0.5s; }
+    transition: all 0.5s;
+    z-index: 0; }
 
 .card:hover {
-  transform: translateX(-2%) translateY(3%);
-  height: 95%;
-  width: 26vw; }
+  height: 90vh;
+  transform: translateY(-0.5vh); }
   .card:hover::before {
-    height: 100%;
-    width: 26vw;
+    height: 90vh;
     background-color: rgba(0, 0, 0, 0); }
   .card:hover::after {
-    height: 25%;
-    width: 26vw;
-    background-image: linear-gradient(to top, black, rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0)); }
+    height: 75%;
+    background-image: linear-gradient(to top, black, rgba(0, 0, 0, 0)); }
+
+.screen3__panel__stars {
+  color: white;
+  display: flex;
+  z-index: 1;
+  flex-direction: row;
+  align-items: flex-start;
+  font-family: "Argentum";
+  transform: translateY(100%); }
+
+.screen3__panel__star {
+  width: 1.5vw;
+  margin: 0.1vw;
+  aspect-ratio: 1;
+  background-image: url(./../img/star.png);
+  background-repeat: no-repeat;
+  background-size: cover; }
+
+.screen3__panel__img {
+  width: 15vw;
+  aspect-ratio: 1;
+  border: 2px solid var(--Gold);
+  border-radius: 50%;
+  z-index: 1;
+  background-repeat: no-repeat;
+  background-size: cover;
+  transform: translateY(50%); }
+
+.screen3__panel__img1 {
+  background-image: url(./../img/card-1.jpg); }
+
+.screen3__panel__img2 {
+  background-image: url(./../img/card-2.jpg); }
+
+.screen3__panel__img3 {
+  background-image: url(./../img/card-3.jpg); }
+
+.screen3__panel__img4 {
+  background-image: url(./../img/card-4.jpg); }
+
+.screen3__panel__img5 {
+  background-image: url(./../img/card-5.jpg); }
+
+.screen3__panel__info {
+  color: white;
+  display: flex;
+  z-index: 1;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  font-family: "Gilda"; }
+
+.screen3__panel__title {
+  color: var(--Gold);
+  font-family: 'Argentum';
+  font-size: 2.5rem;
+  letter-spacing: 0.25rem; }
+
+.screen3__panel__price {
+  font-size: 3vh;
+  color: var(--Gold);
+  font-weight: 800; }
+
+.screen3__panel__location {
+  font-size: 3vh; }
+
+.screen3__panel__desc {
+  margin: 2vh;
+  font-size: 1.8vh;
+  width: 18vw; }
+
+.screen5__stars {
+  color: white;
+  display: flex;
+  z-index: 1;
+  flex-direction: row;
+  align-items: flex-start;
+  font-family: "Argentum"; }
+
+.screen5__star {
+  width: 1.5vw;
+  margin: 0.1vw;
+  aspect-ratio: 1;
+  background-image: url(./../img/star.png);
+  background-repeat: no-repeat;
+  background-size: cover; }
+
+.screen4__content {
+  text-align: left;
+  width: 100vw;
+  color: var(--Brown-3);
+  display: flex;
+  flex-direction: column; }
+  .screen4__content__subtitle {
+    font-family: "Argentum";
+    color: var(--Gold);
+    font-size: 2rem;
+    letter-spacing: 0.25rem; }
+  .screen4__content__title {
+    font-family: "Gilda";
+    font-size: 5rem;
+    letter-spacing: 0.25rem; }
+  .screen4__content__header {
+    height: 25vh;
+    padding: 60vh 0 0 18vw; }
+
+.screen4__main__content {
+  width: 100vw;
+  height: 80vh; }
+
+.screen4__deck {
+  position: absolute;
+  display: flex;
+  flex-direction: row; }
+
+.deck1 {
+  top: 25vh;
+  right: 5vw; }
+
+.deck2 {
+  top: 50%;
+  right: 5vw; }
+
+.deck3 {
+  bottom: 0;
+  right: 5vw; }
+
+.screen4__card {
+  width: 20vw;
+  height: 20vh;
+  margin: 1vw;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center; }
+  .screen4__card__header {
+    display: flex;
+    flex-direction: column; }
+  .screen4__card__title {
+    font-family: "Argentum";
+    color: var(--Gold);
+    font-size: 3vh;
+    padding: 1vh; }
+  .screen4__card__desc {
+    align-self: center;
+    font-family: "Argentum2";
+    font-weight: 800;
+    font-size: 2vh;
+    padding: 0 0.5vw 0 0.5vw; }
+  .screen4__card__icon {
+    top: 1vh;
+    left: 1vw;
+    width: 3vw;
+    aspect-ratio: 1;
+    background-repeat: no-repeat;
+    background-size: cover; }
+  .screen4__card__icon1 {
+    background-image: url(./../img/listing.png); }
+  .screen4__card__icon2 {
+    background-image: url(./../img/guest.png); }
+  .screen4__card__icon3 {
+    background-image: url(./../img/clean.png); }
+  .screen4__card__icon4 {
+    background-image: url(./../img/pricing.png); }
+  .screen4__card__icon5 {
+    background-image: url(./../img/report.png); }
+  .screen4__card__icon6 {
+    background-image: url(./../img/owner.png); }
+
+.screen5__header {
+  text-align: left;
+  width: 50vw;
+  color: white;
+  transform: translateX(7vw); }
+  .screen5__header__subtitle {
+    font-family: "Argentum";
+    color: var(--Gold);
+    font-size: 2rem;
+    letter-spacing: 0.25rem; }
+  .screen5__header__title {
+    font-family: "Gilda";
+    font-size: 5rem;
+    letter-spacing: 0.25rem; }
+  .screen5__header__desc {
+    align-self: center;
+    font-family: "Argentum2";
+    font-weight: 800;
+    font-size: 2vh;
+    padding: 0 0.5vw 0 0.5vw; }
+
+.screen5__comments {
+  width: 40vw;
+  height: 70vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center; }
+
+@keyframes moveInLeftFast {
+  0% {
+    opacity: 0;
+    transform: translateX(2vw); }
+  20% {
+    opacity: 1;
+    transform: translateY(0); }
+  70% {
+    opacity: 1;
+    transform: translateY(0); }
+  100% {
+    opacity: 0;
+    transform: translateX(-2vw); } }
+
+.screen5__comment {
+  width: 100%;
+  height: 30vh;
+  background-image: linear-gradient(to right, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.9), black, rgba(0, 0, 0, 0.9), rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0));
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  justify-content: space-evenly;
+  align-items: center;
+  animation-name: moveInLeftFast;
+  animation-duration: 12s;
+  animation-timing-function: ease-in-out;
+  animation-iteration-count: infinite; }
+  .screen5__comment__stars {
+    position: relative;
+    padding: 0;
+    margin: 0; }
+  .screen5__comment__desc {
+    color: white;
+    font-family: "Argentum2";
+    font-weight: 800;
+    font-size: 2vh;
+    padding: 0 0.5vw 0 0.5vw; }
+  .screen5__comment__person {
+    font-family: "Argentum";
+    color: white;
+    font-size: 2vh;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-evenly; }
+    .screen5__comment__person__img {
+      width: 3vw;
+      aspect-ratio: 1;
+      border: 2px solid var(--Gold);
+      border-radius: 50%;
+      margin-right: 1vw;
+      z-index: 1;
+      background-color: red;
+      background-repeat: no-repeat;
+      background-size: cover; }
+
+#comm1, #comm2, #comm3 {
+  display: none; }
+
+#comm1.show, #comm2.show, #comm3.show {
+  display: flex; }
+
+.person1 {
+  background-image: url(./../img/card-1.jpg); }
+
+.person2 {
+  background-image: url(./../img/card-2.jpg); }
+
+.person3 {
+  background-image: url(./../img/card-3.jpg); }
+
+.person4 {
+  background-image: url(./../img/card-4.jpg); }
+
+.person5 {
+  background-image: url(./../img/card-5.jpg); }
+
+.person6 {
+  background-image: url(./../img/card-1.jpg); }
+
+.title__in5, .title__in6 {
+  transform: translateY(20%); }
+
+.form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between; }
+
+.inp {
+  width: 25vw;
+  height: 5vh;
+  background: none;
+  border: none;
+  border-bottom: 2px solid var(--Brown-3);
+  outline: none;
+  font-family: "Argentum2";
+  font-weight: 800;
+  font-size: 2.5vh;
+  margin-top: 5vh; }
+
+.btn-margin {
+  margin-top: 5vh; }
+
+.honey {
+  display: none; }
+
+#facebook {
+  background-image: url(./../img/facebook.png); }
+  #facebook:hover {
+    background-image: url(./../img/facebook-gold.png); }
+
+#twitter {
+  background-image: url(./../img/twitter.png); }
+  #twitter:hover {
+    background-image: url(./../img/twitter-gold.png); }
+
+#youtube {
+  background-image: url(./../img/youtube.png); }
+  #youtube:hover {
+    background-image: url(./../img/youtube-gold.png); }
+
+#instagram {
+  background-image: url(./../img/instagram.png); }
+  #instagram:hover {
+    background-image: url(./../img/instagram-gold.png); }
+
+.footer___row {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  justify-content: space-evenly; }
+
+.footer___col {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+  font-family: "Argentum";
+  color: white; }
+  .footer___col__head {
+    cursor: pointer;
+    font-size: 2vh;
+    transition: 0.5s;
+    margin-bottom: 1.5vh; }
+    .footer___col__head:hover {
+      color: var(--Gold); }
+  .footer___col__sub {
+    cursor: pointer;
+    font-size: 1.8vh;
+    transition: 0.5s; }
+    .footer___col__sub:hover {
+      color: var(--Gold); }
+  .footer___col__icon {
+    cursor: pointer;
+    width: 2vw;
+    aspect-ratio: 1;
+    background-repeat: no-repeat;
+    background-size: cover;
+    transition: 0.5s; }
+
+.footer___company {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  margin-bottom: 1.5vh; }
+
+.footer___title {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  font-weight: 600;
+  align-items: center;
+  font-family: "Gilda";
+  font-size: 2rem; }
+
+.footer___sub-title {
+  font-family: Argentum2;
+  font-size: 1rem;
+  color: white; }
+
+.footer___logo {
+  height: 3rem;
+  width: 7rem;
+  cursor: pointer;
+  background-image: url(./../img/logo.png);
+  background-repeat: no-repeat;
+  background-size: cover;
+  transition: .2s; }
 
 .container {
-  max-width: 120vw;
-  height: 600vh;
+  max-width: 100vw;
+  height: 570vh;
   position: relative;
   z-index: 0; }
 
@@ -546,10 +960,10 @@ body {
 
 .screen3 {
   position: absolute;
-  top: 180vh;
+  top: 280vh;
   width: 100vw;
   height: 100vh;
-  background-color: white;
+  background-color: var(--Light);
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -557,29 +971,34 @@ body {
 
 .screen4 {
   position: absolute;
-  top: 280vh;
+  top: 180vh;
   width: 100vw;
-  height: 80vh;
-  background-color: var(--Brown-1);
+  height: 100vh;
   display: flex;
   align-items: center;
-  justify-content: center; }
+  justify-content: center;
+  background-color: var(--Light);
+  background-image: url(./../img/bg-4.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center; }
 
 .screen5 {
   position: absolute;
-  top: 360vh;
+  top: 380vh;
   width: 100vw;
   height: 80vh;
-  background-color: goldenrod;
+  background-color: transparent;
   display: flex;
+  flex-direction: row;
   align-items: center;
-  justify-content: center; }
+  justify-content: space-evenly; }
 
 .screen6 {
   position: absolute;
-  top: 440vh;
+  top: 460vh;
   width: 100vw;
-  height: 100vh;
+  height: 80vh;
   background-color: var(--Light);
   display: flex;
   align-items: center;
@@ -589,8 +1008,41 @@ body {
   position: absolute;
   top: 540vh;
   width: 100vw;
-  height: 60vh;
+  height: 30vh;
   background-color: var(--Brown-2);
   display: flex;
+  flex-direction: column;
   align-items: center;
+  justify-content: space-evenly;
   justify-content: center; }
+
+.background {
+  position: fixed;
+  width: 100vw;
+  height: 100vh;
+  z-index: -2;
+  background-image: url(./../img/card-1.jpg);
+  background-repeat: no-repeat;
+  background-size: cover; }
+  .background::before {
+    content: "";
+    position: absolute;
+    background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4));
+    width: 100vw;
+    height: 100vh; }
+#nav__home:hover{
+  color: #ab844f;
+  transition: 0.5s;
+}
+  @media  only screen and (max-width: 600px)
+{
+  .screen2__gallery {
+    justify-self: center;
+    transform: translate(-70%, -10%); }
+    .screen2__gallery__primary {
+      height: 22vh;
+      transform: translate(-5vw, -2vh) rotate(-2deg); }
+    .screen2__gallery__secondary {
+      height: 13vh;
+      transform: translate(5vw, 3vh) rotate(1deg); }
+}
